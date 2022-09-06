@@ -19,7 +19,9 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-
+import PastComponent from '../PastComponent/PastComponent';
+import DetailComponent from '../DetailComponent/DetailComponent';
+import NewComponent from '../NewComponent/NewComponent';
 import './App.css';
 
 function App() {
@@ -67,6 +69,21 @@ function App() {
           >
             <InfoPage />
           </ProtectedRoute>
+
+          <ProtectedRoute
+            exact path ="/past">
+            <PastComponent />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact path ="/detail">
+              <DetailComponent />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact path ="/new">
+              <NewComponent />
+            </ProtectedRoute>
 
           <Route
             exact
