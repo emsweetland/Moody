@@ -22,6 +22,13 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import PastComponent from '../PastComponent/PastComponent';
 import DetailComponent from '../DetailComponent/DetailComponent';
 import NewComponent from '../NewComponent/NewComponent';
+import SleepComponent from '../SleepComponent/SleepComponent'
+import FoodComponent from '../FoodComponent/FoodComponent';
+import WaterComponent from '../WaterComponent/WaterComponent';
+import FriendComponent from '../FriendComponent/FriendComponent';
+import MoodComponent from '../MoodComponent/MoodComponent.jsx'
+import ReviewComponent from '../ReviewComponent/ReviewComponent';
+import SubmitComponent from '../SubmitComponent/SubmitComponent';
 import './App.css';
 
 function App() {
@@ -84,6 +91,41 @@ function App() {
             exact path ="/new">
               <NewComponent />
             </ProtectedRoute>
+
+            <ProtectedRoute
+            exact path ="/sleep">
+            <SleepComponent />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact path ="/food">
+            <FoodComponent />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact path ="/water">
+            <WaterComponent />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact path ="/friend">
+            <FriendComponent />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact path ="/mood">
+            <MoodComponent />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact path ="/review">
+            <ReviewComponent />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact path ="/submit">
+            <SubmitComponent />
+          </ProtectedRoute>
 
           <Route
             exact

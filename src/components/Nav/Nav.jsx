@@ -4,6 +4,12 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
 
+//MUI things
+import { IconButton } from '@mui/material';
+import HomeIcon from '@mui/icons-material/Home';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import LogoutIcon from '@mui/icons-material/Logout';
+
 
 function Nav() {
   const user = useSelector((store) => store.user);
@@ -28,7 +34,19 @@ function Nav() {
             <Link className="navLink">
               Back
             </Link>
-          
+
+            <IconButton aria-label="back">
+              <ArrowBackIcon />
+            </IconButton>
+
+            <IconButton aria-label="home">
+              <HomeIcon />
+            </IconButton>
+
+            <IconButton aria-label="logout">
+              <LogoutIcon />
+            </IconButton>
+
             <Link className="navLink" to="/user">
               Home
             </Link>
