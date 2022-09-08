@@ -40,6 +40,8 @@ function App() {
     dispatch({ type: 'FETCH_USER' });
   }, [dispatch]);
 
+  
+
   return (
     <Router>
       <div>

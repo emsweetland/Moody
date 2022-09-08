@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {useHistory} from 'react-router-dom'
+
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
+  const reflection = useSelector((store) => store.reflection)
   const history = useHistory();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: 'FETCH_REFLECTION' });
+  }, [dispatch]);
+
+  console.log({reflection});
 
   return (
     <div className="container">

@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+//provider allows us to use redux within our react app
 import { Provider } from 'react-redux';
-
 import store from './redux/store';
-
 import App from './components/App/App';
+
+
 
 ReactDOM.render(
   <Provider store={store}>
