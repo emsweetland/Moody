@@ -9,4 +9,5 @@ const reflectionReducer = (state = [], action) => {
   }
 
 
-  export default reflectionReducer;
+
+  export default reflectionReducer

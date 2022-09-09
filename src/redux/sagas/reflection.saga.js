@@ -3,7 +3,20 @@ import axios from 'axios'
 
 function* reflectionSaga() {
     yield takeLatest('FETCH_REFLECTION', fetchReflection);
+    yield takeLatest('GET_THIS_REFLECTION', fetchThisReflection)
 }
+
+function* fetchThisReflection(action) {
+  console.log(action.payload)
+  try {
+    const response = yield axios.get(`/api/reflection/${action.payload}`);
+    console.log(response)
+    yield put ({ type: 'SET_THIS_REFLECTION', payload: response.data})
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 
 function* fetchReflection() {
     //get all reflections from DB

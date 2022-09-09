@@ -85,7 +85,7 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            exact path ="/detail">
+            exact path ="/detail/:id">
               <DetailComponent />
           </ProtectedRoute>
 
