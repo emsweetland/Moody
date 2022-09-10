@@ -28,7 +28,6 @@ function UserPage() {
       <button    onClick={() => {
             history.push('/new')}}>New Reflection</button>
       <p>Your ID is: {user.id}</p>
-      <LogOutButton className="btn" />
     </div>
   );
 }

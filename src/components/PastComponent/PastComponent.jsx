@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import DetailComponent from '../DetailComponent/DetailComponent'
 
 function PastComponent() {
   // const store = useSelector((store) => store); //not using this one rn
@@ -22,7 +23,7 @@ function PastComponent() {
 
   const reflectionDetail = (id) => {
     console.log(id)
-    dispatch({ type: 'GET_THIS_REFLECTION', payload: id})
+    
     history.push(`/detail/${id}`)
   }
 
@@ -39,6 +40,8 @@ function PastComponent() {
           )
         })}
       </ul>
+
+
     </div>
   );
 }
