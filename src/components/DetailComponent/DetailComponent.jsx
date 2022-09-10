@@ -34,7 +34,13 @@ useEffect(() => {
 }, [])
 
 
-  console.log(store)
+//write a function that checks to see if the result is true, null, or false
+//let selection = northing
+//if true  selection = yes i did that
+//else if null selection = i tried my best
+//else false selection = i didn't do that
+//return selection!!
+
 
 
   return (
@@ -44,11 +50,11 @@ useEffect(() => {
       <h2>Past Reflections</h2>
       <p>date/time</p>
       <ul>
-        <li>mood</li>
-        <li>q1</li>
-        <li>q2</li>
-        <li>q3</li>
-        <li>q4</li>
+        <li>mood : {thisReflection[0].moodname}</li>
+        <li>q1{thisReflection[0].text} </li>
+        <li>q2{thisReflection[1].text} </li>
+        <li>q3{thisReflection[2].text} </li>
+        <li>q4{thisReflection[3].text} </li>
       </ul>
     <IconButton aria-label="edit">
       <EditIcon />
