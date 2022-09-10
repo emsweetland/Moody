@@ -3,18 +3,30 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import DetailComponent from '../DetailComponent/DetailComponent'
 
 function PastComponent() {
-  // const store = useSelector((store) => store);
+  // const store = useSelector((store) => store); //not using this one rn
+ //reflectionReducer comes from _root.reducer.js (actually from reflection.reducer.js)
   const reflection = useSelector((store) => store.reflectionReducer)
+  
   const history = useHistory();
   const dispatch = useDispatch();
 
+
+  //this guy loads all of the reflections for the user on load
   useEffect(() => {
     dispatch({ type: 'FETCH_REFLECTION' });
   }, [dispatch]);
 
   console.log(reflection);
+
+  const reflectionDetail = (id) => {
+    console.log(id)
+    
+    history.push(`/detail/${id}`)
+  }
+
 
   return (
     <div>
@@ -22,12 +34,14 @@ function PastComponent() {
       <ul>
         {reflection.map(reflections => {
           return (
-            <li key={reflections.id} onClick={() => {history.push('/detail')}}>
+            <li key={reflections.id} onClick={(() => reflectionDetail(reflections.id))}>
               {reflections.when}
             </li>
           )
         })}
       </ul>
+
+
     </div>
   );
 }
