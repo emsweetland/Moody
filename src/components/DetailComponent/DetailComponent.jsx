@@ -20,7 +20,15 @@ function DetailComponent(id) {
   const dispatch = useDispatch();
 
 
-  console.log(params.id);
+  console.log('params.id', params.id);
+  console.log('thisReflection', thisReflection);
+  //console.log(thisReflection[0].moodname)
+  // console.log(thisReflection[0].text, thisReflection[0].response);
+  // console.log(thisReflection[1].text, thisReflection[1].response);
+  // console.log(thisReflection[2].text, thisReflection[2].response);
+  // console.log(thisReflection[3].text, thisReflection[3].response);
+
+
 useEffect(() => {
   dispatch({ type: 'FETCH_THIS_REFLECTION', payload: params.id });
 }, [])
