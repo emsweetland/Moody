@@ -3,6 +3,7 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import reflectionReducer from './reflection.reducer';
 import thisReflectionReducer from './thisreflection.reducer';
+import responseReducer from './response.reducer';
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -12,8 +13,9 @@ import thisReflectionReducer from './thisreflection.reducer';
 const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user, // will have an id and username if someone is logged in
-  reflectionReducer,
-  thisReflectionReducer, //lots of information about one reflection
+  reflectionReducer, //this GETs all the reflections from the DB
+  thisReflectionReducer, //lots of information about one single reflection
+  responseReducer, //holding responses to POST to DB
 });
 
 export default rootReducer;
