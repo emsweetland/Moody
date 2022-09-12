@@ -21,7 +21,21 @@ function WaterComponent(props) {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  //let [waterResponse, setWaterResponse]
+  let [waterResponse, setWaterResponse] = useState('')
+
+  const handleWater = (event) => {
+    console.log(event.target.value);
+    setWaterResponse( event.target.value)
+    console.log(waterResponse)
+  };
+
+    const handleNext = (event) => {
+      event.preventDefault();
+      dispatch({
+        type: 'NEW_WATER',
+        payload : waterResponse,
+      });history.push('/friend')
+    }
 
   return (
     <div>
@@ -33,7 +47,8 @@ function WaterComponent(props) {
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
           defaultValue="i tried my best"
-          name="radio-buttons-group">
+          name="radio-buttons-group"
+          onChange={handleWater}>
           <FormControlLabel value="yes" control={<Radio />} label="yes" />
           <FormControlLabel value="no" control={<Radio />} label="no" />
           <FormControlLabel value="other" control={<Radio />} label="tried my best" />
@@ -41,8 +56,7 @@ function WaterComponent(props) {
       </FormControl>
 
       <IconButton aria-label="next">
-        <NavigateNextIcon  onClick={() => {
-            history.push('/friend')}}/>
+      <NavigateNextIcon onClick={handleNext}/>
       </IconButton>
     </div>
   );

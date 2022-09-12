@@ -21,24 +21,29 @@ function SleepComponent(props) {
   const history = useHistory();
   const dispatch = useDispatch();
 
+  
+  const [sleepResponse, setSleepResponse] = useState('')
 
-  let [sleepResponse, setSleepResponse] = useState({response: ''})
+  // const handleSleep = (event) => {
+  //   console.log(event.target.value);
+  //   setSleepResponse({
+  //     response: event.target.value
+  //   })};
+  //
 
-  const handleSleep = (event) => {
-    console.log(event.target.value);
-    setSleepResponse({
-      response : event.target.value
-    })};
+
+  const handleSleep = event => {
+   console.log(event.target.value);
+   setSleepResponse(event.target.value);
+   console.log(sleepResponse)
+  }
 
   const handleNext = (event) => {
     event.preventDefault();
-    console.log(sleepResponse);
-
     dispatch({
-      //type : set_reflection? set_sleep?
-      //payload : sleepResponse ?
-      //history.push('/food')
-    })
+      type: 'NEW_SLEEP',
+      payload : sleepResponse 
+    });history.push('/food')
   }
 
   return (
@@ -60,9 +65,7 @@ function SleepComponent(props) {
       </FormControl>
 
       <IconButton aria-label="next">
-        <NavigateNextIcon onClick={() => {
-          history.push('/food')
-        }} />
+        <NavigateNextIcon onClick={handleNext}/>
       </IconButton>
     
     </div>

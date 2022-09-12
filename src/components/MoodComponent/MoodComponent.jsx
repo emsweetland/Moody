@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 //MUI stuff
 import { IconButton } from '@mui/material';
@@ -18,6 +19,23 @@ function MoodComponent(props) {
   // a default value of 'Functional Component'
   const store = useSelector((store) => store);
   const history = useHistory();
+  const dispatch = useDispatch();
+
+  const [moodResponse, setMoodResponse] = useState('')
+
+  const handleMood = (event) => {
+    console.log(event.target.value);
+    setMoodResponse(event.target.value)
+    console.log(moodResponse)
+  };
+
+    const handleNext = (event) => {
+      event.preventDefault();
+      dispatch({
+        type: 'NEW_MOOD',
+        payload: moodResponse
+      });history.push('/review')
+    }
 
   return (
     <div>
@@ -29,7 +47,8 @@ function MoodComponent(props) {
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
           defaultValue="i tried my best"
-          name="radio-buttons-group">
+          name="radio-buttons-group"
+          onChange={handleMood}>
           <FormControlLabel value="yes" control={<Radio />} label="happy" />
           <FormControlLabel value="no" control={<Radio />} label="sad" />
           <FormControlLabel value="other" control={<Radio />} label="mad" />
@@ -37,8 +56,7 @@ function MoodComponent(props) {
       </FormControl>
 
       <IconButton aria-label="next">
-        <NavigateNextIcon  onClick={() => {
-            history.push('/review')}}/>
+      <NavigateNextIcon onClick={handleNext}/>
       </IconButton>
     </div>
   );

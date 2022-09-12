@@ -22,23 +22,20 @@ function FoodComponent(props) {
   const dispatch = useDispatch();
 
 
-  let [foodResponse, setFoodResponse] = useState({response: ''})
+  const [foodResponse, setFoodResponse] = useState('')
 
   const handleFood = (event) => {
     console.log(event.target.value);
-    setFoodResponse({
-      response : event.target.value
-    })};
+    setFoodResponse(event.target.value);
+    console.log(foodResponse)
+  };
 
     const handleNext = (event) => {
       event.preventDefault();
-      console.log(foodResponse);
-
       dispatch({
-        //type:
-        //payload:
-        //history.push('/water')
-      })
+        type: 'NEW_FOOD',
+        payload: foodResponse,
+      });history.push('/water')
     }
   
 
@@ -61,8 +58,7 @@ function FoodComponent(props) {
       </FormControl>
 
       <IconButton aria-label="next">
-        <NavigateNextIcon  onClick={() => {
-            history.push('/water')}}/>
+      <NavigateNextIcon onClick={handleNext}/>
       </IconButton>
     </div>
   );
