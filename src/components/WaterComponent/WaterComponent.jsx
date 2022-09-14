@@ -26,7 +26,6 @@ function WaterComponent(props) {
   const handleWater = (event) => {
     console.log(event.target.value);
     setWaterResponse( event.target.value)
-    console.log(waterResponse)
   };
 
     const handleNext = (event) => {
@@ -49,9 +48,9 @@ function WaterComponent(props) {
           defaultValue="i tried my best"
           name="radio-buttons-group"
           onChange={handleWater}>
-          <FormControlLabel value="yes" control={<Radio />} label="yes" />
-          <FormControlLabel value="no" control={<Radio />} label="no" />
-          <FormControlLabel value="other" control={<Radio />} label="tried my best" />
+          <FormControlLabel value="TRUE" control={<Radio />} label="yes" />
+          <FormControlLabel value="FALSE" control={<Radio />} label="no" />
+          <FormControlLabel value="NULL" control={<Radio />} label="tried my best" />
         </RadioGroup>
       </FormControl>
 

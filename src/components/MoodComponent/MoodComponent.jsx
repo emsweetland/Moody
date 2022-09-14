@@ -21,12 +21,11 @@ function MoodComponent(props) {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const [moodResponse, setMoodResponse] = useState('')
+  const [moodResponse, setMoodResponse] = useState(0)
 
   const handleMood = (event) => {
     console.log(event.target.value);
-    setMoodResponse(event.target.value)
-    console.log(moodResponse)
+    setMoodResponse(parseInt(event.target.value));
   };
 
     const handleNext = (event) => {
@@ -49,9 +48,10 @@ function MoodComponent(props) {
           defaultValue="i tried my best"
           name="radio-buttons-group"
           onChange={handleMood}>
-          <FormControlLabel value="yes" control={<Radio />} label="happy" />
-          <FormControlLabel value="no" control={<Radio />} label="sad" />
-          <FormControlLabel value="other" control={<Radio />} label="mad" />
+          <FormControlLabel value="1" control={<Radio />} label="tired" />
+          <FormControlLabel value="2" control={<Radio />} label="epic" />
+          <FormControlLabel value="3" control={<Radio />} label="grumpy" />
+          <FormControlLabel value="4" control={<Radio />} label="devastated" />
         </RadioGroup>
       </FormControl>
 

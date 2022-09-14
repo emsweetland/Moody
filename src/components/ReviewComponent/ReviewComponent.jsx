@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom'
 //MUI stuff
 import { IconButton } from '@mui/material';
 import PublishIcon from '@mui/icons-material/Publish';
+import axios from 'axios';
 
 // Basic functional component structure for React with default state
 // value setup. When making a new component be sure to replace the
@@ -16,6 +17,8 @@ function ReviewComponent(props) {
   const history = useHistory();
   const dispatch = useDispatch();
   const response = useSelector((store) => store.responseReducer)
+
+
   
   const responseToSend = {
     sleep : response.sleepResponse,
@@ -26,12 +29,18 @@ function ReviewComponent(props) {
   }
 
   const handleClick = () => {
-    console.log(responseToSend)
-
+    console.log(responseToSend);
+    dispatch({
+      type : 'POST_RESPONSE',
+      payload: {
+        responseToSend
+      }
+    })
+    history.push(`/submit`)
   }
 
   return (
-    <div onClick={handleClick}>
+    <div >
       <h2>a new reflection :)</h2>
       <h3>review your answers:</h3>
       <li>get enough sleep? {response.sleepResponse}</li>
@@ -39,9 +48,8 @@ function ReviewComponent(props) {
       <li>drink enough water? {response.waterResponse}</li>
       <li>did you talk to a friend? {response.friendResponse}</li>
       <li>what's your mood today? {response.moodResponse}</li>
-      <IconButton aria-label="next">
-        <PublishIcon  onClick={() => {
-            history.push('/submit')}}/>
+      <IconButton aria-label="publish">
+        <PublishIcon onClick={handleClick}/>
       </IconButton>
     </div>
   );

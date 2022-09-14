@@ -23,7 +23,6 @@ function PastComponent() {
 
   const reflectionDetail = (id) => {
     console.log(id)
-    
     history.push(`/detail/${id}`)
   }
 

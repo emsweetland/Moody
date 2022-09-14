@@ -3,15 +3,14 @@ import {useSelector} from 'react-redux';
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
 //MUI things
 import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import SaveAltIcon from '@mui/icons-material/SaveAlt';
 
 
-
-function DetailComponent(id) {
+function EditComponent(id) {
   // Using hooks we're creating local state for a "heading" variable with
   // a default value of 'Functional Component'
   const store = useSelector((store) => store);
@@ -30,22 +29,15 @@ useEffect(() => {
   dispatch({ type: 'FETCH_THIS_REFLECTION', payload: params.id });
 }, [])
 
-
-const editDetail = (id) => {
-  console.log(id)
-  history.push(`/edit/${id}`)
+const handleSave = () => {
+    //do you want to save your changes?
+    //confirm post to server
 }
 
-
-
-
-//write a function that checks to see if the result is true, null, or false
-//let selection = northing
-//if true  selection = yes i did that
-//else if null selection = i tried my best
-//else false selection = i didn't do that
-//return selection!!
-
+const handleMood = () => {
+  console.log('edit mood')
+  history.push(`/editMood`)
+}
 
 
   return (
@@ -56,22 +48,19 @@ const editDetail = (id) => {
       <p>date/time</p>
       { thisReflection[0] && (
       <ul>
-        <li>mood : {thisReflection[0].moodname}</li>
-        <li>{thisReflection[0].text} </li>
-        <li>{thisReflection[1].text} </li>
-        <li>{thisReflection[2].text} </li>
-        <li>{thisReflection[3].text} </li>
+        <li onClick={handleMood}>mood : {thisReflection[0].moodname}</li>
+        <li onClick={handleSleep}>q1{thisReflection[0].text} </li>
+        <li onClick={handleFood}>q2{thisReflection[1].text} </li>
+        <li onClick={handleWater}>q3{thisReflection[2].text} </li>
+        <li onClick={handleFriend}>q4{thisReflection[3].text} </li>
       </ul>
       )
     }
     <IconButton aria-label="edit">
-      <EditIcon onClick={(() => editDetail(params.id))}/>
-    </IconButton>
-    <IconButton aria-label="delete-forever">
-      <DeleteForeverIcon />
+      <SaveAltIcon onClick={handleSave}/>
     </IconButton>
     </div>
   );
 }
 
-export default DetailComponent;
+export default EditComponent;

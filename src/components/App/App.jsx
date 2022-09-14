@@ -29,6 +29,7 @@ import FriendComponent from '../FriendComponent/FriendComponent';
 import MoodComponent from '../MoodComponent/MoodComponent.jsx'
 import ReviewComponent from '../ReviewComponent/ReviewComponent';
 import SubmitComponent from '../SubmitComponent/SubmitComponent';
+import EditComponent from '../EditComponent/EditComponent';
 import './App.css';
 
 function App() {
@@ -127,6 +128,11 @@ function App() {
           <ProtectedRoute
             exact path ="/submit">
             <SubmitComponent />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact path ="/edit">
+            <EditComponent />
           </ProtectedRoute>
 
           <Route
