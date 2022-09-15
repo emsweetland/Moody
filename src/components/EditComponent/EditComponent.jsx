@@ -20,25 +20,18 @@ function EditComponent() {
   const history = useHistory();
   const dispatch = useDispatch();
 
-
-
-
-
-
   console.log('params.id', id);
   console.log('thisReflection', thisReflection);
 
-
-
-
+  const [editMoodResponse, setEditMoodResponse] = useState(0)
 
 const handleSave = () => {
-    //do you want to save your changes?
-    //confirm post to server
+//go back to detail view
 }
 
 const handleMood = () => {
   console.log('edit mood', id)
+  setEditMoodResponse(event.target.value)
   history.push(`/editMood/${id}`);
 }
 

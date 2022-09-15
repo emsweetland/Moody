@@ -1,6 +1,8 @@
 import {put, takeLatest} from 'redux-saga/effects'
 import axios from 'axios'
 
+
+
 function* responseSaga() {
     yield takeLatest('POST_RESPONSE', postResponse);
     yield takeLatest('EDIT_RESPONSE', editResponse);
@@ -20,8 +22,13 @@ function* postResponse(action) {
   }}
 
 function* editResponse(action) {
+
+  // console.log(id)
+  console.error('LOOK HERE',action.payload.responseToSend.mood)
+  console.error('payload from edit review component', action.payload.responseToSend.payload)
+  console.log(action.payload)
   try{
-    yield axios.put(`/api/response/${action.payload}`, action.payload)
+    yield axios.put(`/api/response/${action.payload.responseToSend.payload}`, action.payload)
     console.log('in edit response', action.payload)
     yield put({
       type: 'EDIT_RESPONSE_ON_SERVER',

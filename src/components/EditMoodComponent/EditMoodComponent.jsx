@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 //MUI stuff
 import { IconButton } from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
@@ -20,7 +21,7 @@ function EditMoodComponent() {
   const store = useSelector((store) => store);
   const history = useHistory();
   const dispatch = useDispatch();
-  let id = useParams();
+  let {id} = useParams();
 
    const [moodResponse, setMoodResponse] = useState(0)
 
@@ -33,8 +34,8 @@ function EditMoodComponent() {
        event.preventDefault();
        dispatch({
          type: 'EDIT_MOOD',
-         payload: moodResponse
-       });history.push('/review')
+         payload: moodResponse, 
+       });history.push(`/editReview/${id}`)
      }
 
   return (
@@ -63,4 +64,4 @@ function EditMoodComponent() {
   );
 }
 
-export default MoodComponent;
+export default EditMoodComponent;

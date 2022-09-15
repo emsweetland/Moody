@@ -32,13 +32,20 @@ router.post('/', (req, res) => {
         })
 });
 
-router.put('/', (req, res) => {
+router.put('/:id', (req, res) => {
     const response = req.body
+    // console.log('params.id:', params.id)
+    console.log('req.body.responseToSend.mood', req.body.responseToSend.mood)
     console.log('in edit response router', req.body.responseToSend.mood)
     const queryText = `UPDATE "reflection" 
-                    SET "mood_id" = $1 WHERE "reflection".id = $2
-                    VALUES ($1, $2)`;
-    pool.query(queryText, [params.id, req.body.responseToSend.mood])
+                    SET "mood_id" = $1 WHERE "id" = $2`;
+    pool.query(queryText, [req.body.responseToSend.mood, req.body.responseToSend.payload])
+    .then(results => {
+        res.sendStatus(200)
+    }).catch(error => {
+        console.error(error)
+        res.sendStatus(500)
+    })
 })
 
 

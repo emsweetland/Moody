@@ -30,6 +30,8 @@ import MoodComponent from '../MoodComponent/MoodComponent.jsx'
 import ReviewComponent from '../ReviewComponent/ReviewComponent';
 import SubmitComponent from '../SubmitComponent/SubmitComponent';
 import EditComponent from '../EditComponent/EditComponent';
+import EditMoodComponent from '../EditMoodComponent/EditMoodComponent';
+import EditReviewComponent from '../EditReviewComponent/EditReviewComponent';
 import './App.css';
 
 function App() {
@@ -133,6 +135,16 @@ function App() {
           <ProtectedRoute
             exact path ="/edit/:id">
             <EditComponent />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact path ="/editMood/:id">
+            <EditMoodComponent />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact path ="/editReview/:id">
+            <EditReviewComponent />
           </ProtectedRoute>
 
           <Route
