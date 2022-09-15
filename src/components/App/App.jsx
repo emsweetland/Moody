@@ -131,7 +131,7 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            exact path ="/edit">
+            exact path ="/edit/:id">
             <EditComponent />
           </ProtectedRoute>
 

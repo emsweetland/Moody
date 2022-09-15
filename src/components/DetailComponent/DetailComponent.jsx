@@ -32,7 +32,7 @@ useEffect(() => {
 
 
 const editDetail = (id) => {
-  console.log(id)
+  console.log('im editing:', id)
   history.push(`/edit/${id}`)
 }
 

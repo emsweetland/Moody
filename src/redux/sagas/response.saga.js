@@ -21,7 +21,7 @@ function* postResponse(action) {
 
 function* editResponse(action) {
   try{
-    yield axios.put('/api/response', action.payload)
+    yield axios.put(`/api/response/${action.payload}`, action.payload)
     console.log('in edit response', action.payload)
     yield put({
       type: 'EDIT_RESPONSE_ON_SERVER',
