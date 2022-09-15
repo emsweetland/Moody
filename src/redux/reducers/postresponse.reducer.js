@@ -1,7 +1,7 @@
 const postResponseReducer = (state = 0, action) => {
     switch (action.type) {
         case'POST_RESPONSE_TO_SERVER':
-        console.log('action.payload in postresponseReducer', action.payload)
+        console.log('action.payload in postresponseReducer', action.payload.id)
     return action.payload
     default : return state;
     }

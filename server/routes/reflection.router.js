@@ -5,7 +5,7 @@ const {
   rejectUnauthenticated,
 } = require('../modules/authentication-middleware');
 
-
+//get specific reflection for user
 router.get('/:id', (req, res) => {
   console.log('in router GET')
   console.log(req.params)
@@ -53,16 +53,6 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     console.log('ERROR: get reflections', err);
     res.sendStatus(500)
   })
-});
-
-
-
-
-/**
- * POST route template
- */
-router.post('/', (req, res) => {
-  // POST route code here
 });
 
 module.exports = router;

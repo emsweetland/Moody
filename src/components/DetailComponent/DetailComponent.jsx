@@ -36,6 +36,14 @@ const editDetail = (id) => {
   history.push(`/edit/${id}`)
 }
 
+const deleteDetail = (id) => {
+  console.log('delete_response', id)
+  dispatch({
+    type : 'DELETE_RESPONSE',
+    payload: 
+        id
+  })
+}
 
 
 
@@ -68,7 +76,7 @@ const editDetail = (id) => {
       <EditIcon onClick={(() => editDetail(params.id))}/>
     </IconButton>
     <IconButton aria-label="delete-forever">
-      <DeleteForeverIcon />
+      <DeleteForeverIcon onClick={(() => deleteDetail(params.id))}/>
     </IconButton>
     </div>
   );
