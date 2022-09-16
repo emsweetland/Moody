@@ -69,7 +69,7 @@ function PastComponent() {
           return (
             <li key={reflections.id} onClick={(() => reflectionDetail(reflections.id))}>
              <p> {formatDate(reflections.when)} </p>
-              <img></img>
+              <img src={reflections.imageurl}></img>
             </li>
           )
         })}

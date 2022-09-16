@@ -40,8 +40,11 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   pool
   
   // $1 is req.user.id, this is passed through [user] after the query statement
-  .query(`SELECT * FROM reflection WHERE "user_id" = $1 ORDER BY "when"`, [user])
-  
+  //.query(`SELECT * FROM reflection WHERE "user_id" = $1 ORDER BY "when"`, [user])
+  .query(`SELECT "reflection".id, "reflection".when, "reflection".mood_id, "mood".imageurl FROM "reflection"
+  JOIN "mood" ON "mood".id = "reflection".mood_id
+  WHERE "user_id" = $1
+  GROUP BY "reflection".id, "reflection".when, "reflection".mood_id, "mood".imageurl;`, [user])
   // receive the SELECTed rows from the DB
   .then( result => {
     res.send(result.rows);
