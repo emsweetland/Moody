@@ -14,19 +14,18 @@ import FormLabel from '@mui/material/FormLabel';
 // Basic functional component structure for React with default state
 // value setup. When making a new component be sure to replace the
 // component name TemplateFunction with the name for the new component.
-function FoodComponent(props) {
+function FoodComponent() {
   // Using hooks we're creating local state for a "heading" variable with
   // a default value of 'Functional Component'
   const store = useSelector((store) => store);
   const history = useHistory();
   const dispatch = useDispatch();
 
-
   const [foodResponse, setFoodResponse] = useState('')
 
   const handleFood = (event) => {
     console.log(event.target.value);
-    setFoodResponse(event.target.value);
+    setFoodResponse(parseBoolean(event.target.value));
   };
 
     const handleNext = (event) => {
@@ -37,7 +36,6 @@ function FoodComponent(props) {
       });history.push('/water')
     }
   
-
   return (
     <div>
       <h2>a new reflection :)</h2>

@@ -22,19 +22,11 @@ function SleepComponent(props) {
   const dispatch = useDispatch();
 
   
-  const [sleepResponse, setSleepResponse] = useState('')
-
-  // const handleSleep = (event) => {
-  //   console.log(event.target.value);
-  //   setSleepResponse({
-  //     response: event.target.value
-  //   })};
-  //
-
+  const [sleepResponse, setSleepResponse] = useState(false)
 
   const handleSleep = event => {
    console.log(event.target.value);
-   setSleepResponse(event.target.value);
+   setSleepResponse(parseBoolean(event.target.value));
   }
 
   const handleNext = (event) => {
@@ -57,9 +49,9 @@ function SleepComponent(props) {
           defaultValue="i tried my best"
           name="radio-buttons-group"
           onChange={handleSleep}>
-          <FormControlLabel value="TRUE" control={<Radio />} label="yes" />
-          <FormControlLabel value="FALSE" control={<Radio />} label="no" />
-          <FormControlLabel value="NULL" control={<Radio />} label="tried my best" />
+          <FormControlLabel value='true' control={<Radio />} label="yes" />
+          <FormControlLabel value='false' control={<Radio />} label="no" />
+          <FormControlLabel value='null' control={<Radio />} label="tried my best" />
         </RadioGroup>
       </FormControl>
 

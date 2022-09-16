@@ -25,7 +25,7 @@ function FriendComponent(props) {
 
   const handleFriend = (event) => {
     console.log(event.target.value);
-    setFriendResponse(event.target.value)
+    setFriendResponse(parseBoolean(event.target.value))
     };
 
     const handleNext = (event) => {

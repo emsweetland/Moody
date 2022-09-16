@@ -25,7 +25,7 @@ function WaterComponent(props) {
 
   const handleWater = (event) => {
     console.log(event.target.value);
-    setWaterResponse( event.target.value)
+    setWaterResponse(parseBoolean(event.target.value))
   };
 
     const handleNext = (event) => {
