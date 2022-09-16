@@ -49,11 +49,24 @@ router.post('/', async (req, res) => {
       // save query result to variable
     const result = await connection.query(sqlAddReflection, [user, mood]);
     const reflectionID = result.rows[0].id;
-    const sleep = req.body.responseToSend.sleep
-    const food = req.body.responseToSend.food
-    const water = req.body.responseToSend.water
-    const friend = req.body.responseToSend.friend
+    let sleep = req.body.responseToSend.sleep
+    if(sleep == 'NULL') {
+      sleep = null;
+    }
+    let food = req.body.responseToSend.food
+    if(food == 'NULL') {
+      food = null;
+    }
+    let water = req.body.responseToSend.water
+    if(water == 'NULL') {
+      water = null;
+    }
+    let friend = req.body.responseToSend.friend
+    if(friend == 'NULL') {
+      friend = null;
+    }
     console.log(sleep, food, water, friend)
+    console.log(req.body);
     const sqlAddResponse =`
     INSERT INTO "response" ("reflection_id", "prompt_id", "response")
     VALUES ($1, 1, $2), ($1, 2, $3), ($1, 3, $4), ($1, 4, $5);
