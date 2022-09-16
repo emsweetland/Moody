@@ -28,6 +28,8 @@ function ReviewComponent(props) {
     mood : response.moodResponse
   }
 
+  console.log(responseToSend)
+
   const handleClick = () => {
     console.log(responseToSend);
     dispatch({

@@ -15,7 +15,9 @@ function AboutPage() {
         After a series of questions, the user is asked to pick a mood for the day. This is something that shouldn’t take
         more than a minute each day, but after some time you will have many reflections to look back on and find
         correlations between the choices you may have made on good or bad days. My app is designed to make the
-        reflection process simple and easy, allowing you to keep logs that you can look back on days or weeks later.</p>
+        reflection process simple and easy, allowing you to keep logs that you can look back on days or weeks later.
+        
+        Even on your hardest days, the app will be simple to use.</p>
       </div>
     </div>
   );

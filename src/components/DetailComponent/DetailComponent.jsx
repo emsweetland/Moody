@@ -36,6 +36,16 @@ const editDetail = (id) => {
   history.push(`/edit/${id}`)
 }
 
+
+//toggle click listener with popup
+
+
+
+
+
+
+
+//dispatch when u click ok on the popup
 const deleteDetail = (id) => {
   console.log('delete_response', id)
   dispatch({

@@ -8,6 +8,10 @@ import PublishIcon from '@mui/icons-material/Publish';
 import axios from 'axios';
 import { useParams } from 'react-router-dom'
 
+// TODO sql query sending responses along with mood
+
+
+
 // Basic functional component structure for React with default state
 // value setup. When making a new component be sure to replace the
 // component name TemplateFunction with the name for the new component.
