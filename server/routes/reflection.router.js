@@ -11,13 +11,14 @@ router.get('/:id', (req, res) => {
   console.log(req.params)
   const id = req.params.id
   console.log('id is:', id)
-  const queryName = `SELECT "user".username, "reflection".id AS "reflection.id", "reflection".when, "mood".moodname, "mood".imageurl, "prompt".text, "response".response FROM "user"
+  const queryName = `SELECT "user".username, "reflection".id AS "reflection.id", "reflection".when, "mood".id,"mood".moodname, "response".prompt_id, "prompt".text, "response".response FROM "user"
   JOIN "reflection" ON "user".id = "reflection".user_id
   JOIN "mood" ON "mood".id = "reflection".mood_id
   JOIN "response" ON "response".reflection_id = "reflection".id
   JOIN "prompt" ON "response".prompt_id = "prompt".id
   WHERE "reflection".id = $1
-  GROUP BY "user".username, "reflection".id, "mood".moodname, "mood".imageurl, "prompt".text, "response".response;`;
+  ORDER BY "response".prompt_id 
+  `;
   pool.query(queryName, [id])
     .then( result => {
       res.send(result.rows);
