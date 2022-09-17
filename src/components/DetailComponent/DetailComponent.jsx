@@ -20,11 +20,8 @@ function DetailComponent(id) {
   const history = useHistory();
   const dispatch = useDispatch();
 
-
   console.log('params.id', params.id);
   console.log('thisReflection', thisReflection);
-
-
 
 useEffect(() => {
   dispatch({ type: 'FETCH_THIS_REFLECTION', payload: params.id });
@@ -57,12 +54,7 @@ const deleteDetail = (id) => {
 
 
 
-//write a function that checks to see if the result is true, null, or false
-//let selection = northing
-//if true  selection = yes i did that
-//else if null selection = i tried my best
-//else false selection = i didn't do that
-//return selection!!
+
 
 
 
@@ -75,10 +67,10 @@ const deleteDetail = (id) => {
       { thisReflection[0] && (
       <ul>
         <li>mood : {thisReflection[0].moodname}</li>
-        <li>{thisReflection[0].text} </li>
-        <li>{thisReflection[1].text} </li>
-        <li>{thisReflection[2].text} </li>
-        <li>{thisReflection[3].text} </li>
+        <li>{thisReflection[0].text} {thisReflection[0].response.toString()}</li>
+        <li>{thisReflection[1].text} {thisReflection[1].response.toString()}</li>
+        <li>{thisReflection[2].text} {thisReflection[2].response.toString()}</li>
+        <li>{thisReflection[3].text} {thisReflection[3].response.toString()}</li>
       </ul>
       )
     }

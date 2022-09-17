@@ -24,8 +24,8 @@ function* postResponse(action) {
 function* editResponse(action) {
 
   // console.log(id)
-  console.error('LOOK HERE',action.payload.responseToSend.mood)
-  console.error('payload from edit review component', action.payload.responseToSend.payload)
+  console.log('LOOK HERE',action.payload.responseToSend.mood)
+  console.log('payload from edit review component', action.payload.responseToSend.payload)
   console.log(action.payload)
   try{
     yield axios.put(`/api/response/${action.payload.responseToSend.payload}`, action.payload)
