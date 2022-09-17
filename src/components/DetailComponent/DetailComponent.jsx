@@ -10,7 +10,6 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 
-
 function DetailComponent(id) {
   // Using hooks we're creating local state for a "heading" variable with
   // a default value of 'Functional Component'
@@ -27,6 +26,10 @@ function DetailComponent(id) {
     dispatch({ type: 'FETCH_THIS_REFLECTION', payload: params.id });
   }, [])
 
+  const formatDate = (dateString) => {
+    const options = { month: "short", day: "numeric", hour: 'numeric', hour12: true }
+    return new Date(dateString).toLocaleDateString(undefined, options)
+  }
 
   const editDetail = (id) => {
     console.log('im editing:', id)
@@ -63,7 +66,7 @@ function DetailComponent(id) {
     <div>
 
       <h2>Past Reflections</h2>
-      <p>date/time</p>
+      <p>{formatDate(thisReflection[0].when)}</p>
       {thisReflection[0] && (
         <ul>
           <li>mood : {thisReflection[0].moodname}</li>

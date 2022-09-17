@@ -5,10 +5,6 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 
-
-
-//TODO: POST Q RESPONSES
-
 function PastComponent() {
   // const store = useSelector((store) => store); //not using this one rn
   //reflectionReducer comes from _root.reducer.js (actually from reflection.reducer.js)
@@ -30,7 +26,7 @@ function PastComponent() {
     return new Date(dateString).toLocaleDateString(undefined, options)
   }
 
-  //HELP!!!!
+
   // for (let time of reflection) {
   // // LOOP THRU RESPONSES TO GET TIMESTAMPS
   //    const dateString = time.when
@@ -45,7 +41,7 @@ function PastComponent() {
   //    return show = formatDate(dateString)
   // //LOOP THRU RESPONSES TO GET TIME STAMPS
   // }
-  //HELP!!!!
+
 
 
 
