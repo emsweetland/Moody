@@ -20,8 +20,8 @@ function EditComponent() {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  console.log('params.id', id);
-  console.log('thisReflection', thisReflection);
+  //console.log('params.id', id);
+ // console.log('thisReflection', thisReflection);
 
   const [editMoodResponse, setEditMoodResponse] = useState(0)
 
@@ -36,12 +36,17 @@ function EditComponent() {
   }
 
 
+  const formatDate = (dateString) => {
+    const options = { month: "short", day: "numeric", hour: 'numeric', hour12: true }
+    return new Date(dateString).toLocaleDateString(undefined, options)
+  }
+
   return (
 
     <div>
 
       <h2>Past Reflections</h2>
-      <p>date/time</p>
+      <p>{formatDate(thisReflection[0].when)}</p>
       {thisReflection[0] && (
         <ul>
           <li onClick={handleMood}>mood : {thisReflection[0].moodname}</li>
