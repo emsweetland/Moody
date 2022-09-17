@@ -66,8 +66,10 @@ function DetailComponent(id) {
     <div>
 
       <h2>Past Reflections</h2>
-      <p>{formatDate(thisReflection[0].when)}</p>
+      
       {thisReflection[0] && (
+        <div>
+        <p>{formatDate(thisReflection[0].when)}</p>
         <ul>
           <li>mood : {thisReflection[0].moodname}</li>
           <li>{thisReflection[0].text} {thisReflection[0].response.toString()}</li>
@@ -75,6 +77,7 @@ function DetailComponent(id) {
           <li>{thisReflection[2].text} {thisReflection[2].response.toString()}</li>
           <li>{thisReflection[3].text} {thisReflection[3].response.toString()}</li>
         </ul>
+        </div>
       )
       }
       <IconButton aria-label="edit">

@@ -32,7 +32,9 @@ import SubmitComponent from '../SubmitComponent/SubmitComponent';
 import EditComponent from '../EditComponent/EditComponent';
 import EditMoodComponent from '../EditMoodComponent/EditMoodComponent';
 import EditReviewComponent from '../EditReviewComponent/EditReviewComponent';
+import GuyComponent from '../GuyComponent/GuyComponent';
 import './App.css';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -146,6 +148,7 @@ function App() {
             exact path ="/editReview/:id">
             <EditReviewComponent />
           </ProtectedRoute>
+
 
           <Route
             exact

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { useDispatch, useSelector } from 'react-redux';
 import {useHistory} from 'react-router-dom'
+import GuyComponent from '../GuyComponent/GuyComponent';
 
 
 function UserPage() {
@@ -23,7 +24,7 @@ function UserPage() {
       <button    onClick={() => {
             history.push('/past')}}>Past Reflections</button>
       <br />
-      <img src='https://em02.neocities.org/right.png' />
+      <GuyComponent/>
       <br />
       <button    onClick={() => {
             history.push('/new')}}>New Reflection</button>
