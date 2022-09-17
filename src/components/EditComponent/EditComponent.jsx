@@ -24,6 +24,7 @@ function EditComponent() {
  // console.log('thisReflection', thisReflection);
 
   const [editMoodResponse, setEditMoodResponse] = useState(0)
+  const [editWaterResponse, setEditWaterResponse] = useState(thisReflection[0].response)
 
   const handleSave = () => {
     //go back to detail view
@@ -34,6 +35,13 @@ function EditComponent() {
     setEditMoodResponse(event.target.value)
     history.push(`/editMood/${id}`);
   }
+
+  const handleWater = () => {
+    console.log('edit water', id)
+    setEditWaterResponse(event.target.value)
+    history.push(`/editWater/${id}`);
+  }
+  
 
 
   const formatDate = (dateString) => {
@@ -50,7 +58,7 @@ function EditComponent() {
       {thisReflection[0] && (
         <ul>
           <li onClick={handleMood}>mood : {thisReflection[0].moodname}</li>
-          <li >{thisReflection[0].text} {thisReflection[0].response.toString()}</li>
+          <li onClick={handleWater}>{thisReflection[0].text} {thisReflection[0].response.toString()}</li>
           <li>{thisReflection[1].text} {thisReflection[1].response.toString()}</li>
           <li>{thisReflection[2].text} {thisReflection[2].response.toString()}</li>
           <li>{thisReflection[3].text} {thisReflection[3].response.toString()}</li>

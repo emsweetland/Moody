@@ -31,7 +31,11 @@ import ReviewComponent from '../ReviewComponent/ReviewComponent';
 import SubmitComponent from '../SubmitComponent/SubmitComponent';
 import EditComponent from '../EditComponent/EditComponent';
 import EditMoodComponent from '../EditMoodComponent/EditMoodComponent';
+import EditWaterComponent from '../EditWaterComponent/EditFoodComponent/EditWaterComponent';
+
+
 import EditReviewComponent from '../EditReviewComponent/EditReviewComponent';
+
 import GuyComponent from '../GuyComponent/GuyComponent';
 import './App.css';
 
@@ -142,6 +146,11 @@ function App() {
           <ProtectedRoute
             exact path ="/editMood/:id">
             <EditMoodComponent />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact path ="/editWater/:id">
+            <EditWaterComponent />
           </ProtectedRoute>
 
           <ProtectedRoute
