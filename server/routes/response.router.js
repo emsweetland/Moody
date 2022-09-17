@@ -50,19 +50,19 @@ router.post('/', async (req, res) => {
     const result = await connection.query(sqlAddReflection, [user, mood]);
     const reflectionID = result.rows[0].id;
     let sleep = req.body.responseToSend.sleep
-    if(sleep == 'NULL') {
+    if(sleep == 'null') {
       sleep = null;
     }
     let food = req.body.responseToSend.food
-    if(food == 'NULL') {
+    if(food == 'null') {
       food = null;
     }
     let water = req.body.responseToSend.water
-    if(water == 'NULL') {
+    if(water == 'null') {
       water = null;
     }
     let friend = req.body.responseToSend.friend
-    if(friend == 'NULL') {
+    if(friend == 'null') {
       friend = null;
     }
     console.log(sleep, food, water, friend)

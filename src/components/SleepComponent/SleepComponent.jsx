@@ -26,7 +26,7 @@ function SleepComponent(props) {
 
   const handleSleep = event => {
    console.log(event.target.value);
-   setSleepResponse(parseBoolean(event.target.value));
+   setSleepResponse(event.target.value);
   }
 
   const handleNext = (event) => {

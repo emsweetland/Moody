@@ -21,11 +21,11 @@ function FoodComponent() {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const [foodResponse, setFoodResponse] = useState('')
+  const [foodResponse, setFoodResponse] = useState(false)
 
   const handleFood = (event) => {
     console.log(event.target.value);
-    setFoodResponse(parseBoolean(event.target.value));
+    setFoodResponse(event.target.value);
   };
 
     const handleNext = (event) => {
@@ -48,9 +48,9 @@ function FoodComponent() {
           defaultValue="i tried my best"
           name="radio-buttons-group"
           onChange={handleFood}>
-          <FormControlLabel value="TRUE" control={<Radio />} label="yes" />
-          <FormControlLabel value="FALSE" control={<Radio />} label="no" />
-          <FormControlLabel value="NULL" control={<Radio />} label="tried my best" />
+          <FormControlLabel value='true' control={<Radio />} label="yes" />
+          <FormControlLabel value='false' control={<Radio />} label="no" />
+          <FormControlLabel value='null' control={<Radio />} label="tried my best" />
         </RadioGroup>
       </FormControl>
 
