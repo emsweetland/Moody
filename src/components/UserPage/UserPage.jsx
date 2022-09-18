@@ -37,7 +37,7 @@ function UserPage() {
     <Box>
       <Stack spacing={2}>
         <Item>
-          <div className="container">
+
             <h2>Welcome, {user.username}!</h2>
             <Button className= "buttons" variant="contained" color="success" onClick={() => {
               history.push('/past')
@@ -49,7 +49,7 @@ function UserPage() {
             <br />
             <GuyComponent />
             <br />
-          </div>
+
         </Item>
       </Stack>
     </Box>
