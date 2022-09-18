@@ -36,11 +36,11 @@ function EditComponent() {
     history.push(`/editMood/${id}`);
   }
 
-  const handleWater = () => {
-    console.log('edit water', id)
-    setEditWaterResponse(event.target.value)
-    history.push(`/editWater/${id}`);
-  }
+  // const handleWater = () => {
+  //   console.log('edit water', id)
+  //   setEditWaterResponse(event.target.value)
+  //   history.push(`/editWater/${id}`);
+  // }
   
 
 
