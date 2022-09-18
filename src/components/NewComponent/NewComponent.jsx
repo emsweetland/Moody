@@ -4,6 +4,7 @@ import {useHistory} from 'react-router-dom'
 //MUI stuff
 import { IconButton } from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import GuyComponent from '../GuyComponent/GuyComponent';
 
 
 // Basic functional component structure for React with default state
@@ -21,7 +22,9 @@ function NewComponent(props) {
     <div>
       <h2>a new reflection :)</h2>
       <p>You will be asked four questions that will each have a multiple choice response. Answer honestly, but don't overthink it! This is only meant to take a minute or two. :)</p>
+      <GuyComponent/>
       <IconButton aria-label="next">
+        
         <NavigateNextIcon onClick={() => {
             history.push('/sleep')}}/>
       </IconButton>
