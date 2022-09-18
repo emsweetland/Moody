@@ -4,17 +4,17 @@ const router = express.Router();
 
 
 
-router.delete('/:id', (req, res) => {
-    console.log('in delete response router', )
-    const queryText = `DELETE FROM "reflection" WHERE "id"=$1;`;
-    pool.query(queryText, [req.params.id])
-    .then(result =>{
-        res.sendStatus(204)
-    }).catch( error => {
-        console.error(' error in delete router', error)
-        res.sendStatus(500)
-    })
-})
+// router.delete('/:id', (req, res) => {
+//     console.log('in delete response router', )
+//     const queryText = `DELETE FROM "reflection" WHERE "id"=$1;`;
+//     pool.query(queryText, [req.params.id])
+//     .then(result =>{
+//         res.sendStatus(204)
+//     }).catch( error => {
+//         console.error(' error in delete router', error)
+//         res.sendStatus(500)
+//     })
+// })
 
 // router.post('/', (req, res) => {
 //     const response = req.body

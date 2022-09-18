@@ -40,8 +40,9 @@ function* editResponse(action) {
 }
 
 function* deleteResponse(action) {
+  console.log(action.payload)
   try{
-    yield axios.delete(`/api/response/${action.payload}`)
+    yield axios.delete(`/api/delete/${action.payload}`)
     console.log('in delete response', action.payload)
     yield put({
       type: 'DELETE_RESPONSE_ON_SERVER',
