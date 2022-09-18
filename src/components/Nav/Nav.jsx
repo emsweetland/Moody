@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { IconButton } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import InfoIcon from '@mui/icons-material/Info';
 
 
 function Nav() {
@@ -30,10 +31,11 @@ function Nav() {
         {/* If a user is logged in, show these links */}
         {user.id && (
           <>
-
-            <IconButton aria-label="back">
-              <ArrowBackIcon />
+            <Link to="about">
+            <IconButton aria-label="info">
+              <InfoIcon />
             </IconButton>
+            </Link>
             
             <Link to="/home">
             <IconButton aria-label="home">
