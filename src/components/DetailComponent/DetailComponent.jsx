@@ -72,10 +72,18 @@ function DetailComponent(id) {
         <p>{formatDate(thisReflection[0].when)}</p>
         <ul>
           <li>mood : {thisReflection[0].moodname}</li>
-          <li>{thisReflection[0].text} {thisReflection[0].response.toString()}</li>
-          <li>{thisReflection[1].text} {thisReflection[1].response.toString()}</li>
-          <li>{thisReflection[2].text} {thisReflection[2].response.toString()}</li>
-          <li>{thisReflection[3].text} {thisReflection[3].response.toString()}</li>
+          {thisReflection[0].response === null && <li>null</li>}
+          {thisReflection[0].response === true && <li>true</li>}
+          {thisReflection[0].response === false && <li>false</li>}
+          {thisReflection[1].response === null && <li>null</li>}
+          {thisReflection[1].response === true && <li>true</li>}
+          {thisReflection[1].response === false && <li>false</li>}
+          {thisReflection[2].response === null && <li>null</li>}
+          {thisReflection[2].response === true && <li>true</li>}
+          {thisReflection[2].response === false && <li>false</li>}
+          {thisReflection[3].response === null && <li>null</li>}
+          {thisReflection[3].response === true && <li>true</li>}
+          {thisReflection[3].response === false && <li>false</li>}
         </ul>
         </div>
       )
