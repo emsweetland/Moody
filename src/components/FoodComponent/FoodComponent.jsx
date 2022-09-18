@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom'
+import GuyComponent from '../GuyComponent/GuyComponent';
+
 //MUI stuff
 import { IconButton } from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
@@ -55,6 +57,7 @@ function FoodComponent() {
       <Item>
     <div>
       <h2>a new reflection :)</h2>
+      <GuyComponent/>
       <h3>did you get enough to eat?</h3>
 
       <FormControl>

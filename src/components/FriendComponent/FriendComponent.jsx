@@ -14,6 +14,8 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
+import GuyComponent from '../GuyComponent/GuyComponent';
+
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -55,6 +57,7 @@ function FriendComponent(props) {
       <Item>
     <div>
       <h2>a new reflection :)</h2>
+      <GuyComponent/>
       <h3>did you talk to a friend today?</h3>
 
       <FormControl>

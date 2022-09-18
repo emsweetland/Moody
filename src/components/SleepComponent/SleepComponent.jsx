@@ -10,7 +10,8 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import GuyComponent from '../GuyComponent/GuyComponent';import Box from '@mui/material/Box';
+import GuyComponent from '../GuyComponent/GuyComponent';
+import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
@@ -55,8 +56,8 @@ function SleepComponent(props) {
       <Item>
     <div>
       <h2>a new reflection :)</h2>
+      <GuyComponent/>
       <h3>did you get enough sleep?</h3>
-      <GuyComponent />
       <FormControl>
         <FormLabel id="demo-radio-buttons-group-label"></FormLabel>
         <RadioGroup

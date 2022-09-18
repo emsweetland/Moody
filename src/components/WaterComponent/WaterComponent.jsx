@@ -9,6 +9,8 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
+import GuyComponent from '../GuyComponent/GuyComponent';
+
 import FormLabel from '@mui/material/FormLabel';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -55,6 +57,7 @@ function WaterComponent(props) {
       <Item>
     <div>
       <h2>a new reflection :)</h2>
+      <GuyComponent/>
       <h3>did you drink enough water?</h3>
 
       <FormControl>
