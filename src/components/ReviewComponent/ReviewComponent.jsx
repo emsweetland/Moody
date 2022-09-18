@@ -62,10 +62,18 @@ function ReviewComponent(props) {
     <div >
       <h2>a new reflection :)</h2>
       <h3>review your answers:</h3>
-      <li>get enough sleep? {response.sleepResponse}</li>
-      <li>get enough to eat? {response.foodResponse}</li>
-      <li>drink enough water? {response.waterResponse}</li>
-      <li>did you talk to a friend? {response.friendResponse}</li>
+      {response.sleepResponse === "null" && <li>get enough sleep? : Tried my best!</li>}
+      {response.sleepResponse === "true" && <li>get enough sleep? : yep!</li>}
+      {response.sleepResponse === "false" && <li>get enough sleep?  nope!</li>}
+      {response.foodResponse === "null" && <li>get enough sleep?  Tried my best!</li>}
+      {response.foodResponse === "true" && <li>get enough sleep?  yep!</li>}
+      {response.foodResponse === "false" && <li>get enough sleep?  nope!</li>}
+      {response.waterResponse === "null" && <li>get enough sleep?  Tried my best!</li>}
+      {response.waterResponse === "true" && <li>get enough sleep?  yep!</li>}
+      {response.waterResponse === "false" && <li>get enough sleep?  nope!</li>}
+      {response.friendResponse === "null" && <li>get enough sleep?  Tried my best!</li>}
+      {response.friendResponse === "true" && <li>get enough sleep?  yep!</li>}
+      {response.friendResponse === "false" && <li>get enough sleep?  nope!</li>}
       {response.moodResponse === 1 && <li>what's your mood today? tired</li>}
       {response.moodResponse === 2 && <li>what's your mood today? epic</li>}
       {response.moodResponse === 3 && <li>what's your mood today? grumpy</li>}

@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
+import './UserPage.css';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { useDispatch, useSelector } from 'react-redux';
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import GuyComponent from '../GuyComponent/GuyComponent';
 
+import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#eef0ae',
@@ -28,27 +31,28 @@ function UserPage() {
     dispatch({ type: 'FETCH_REFLECTION' });
   }, [dispatch]);
 
-  console.log({reflection});
+  console.log({ reflection });
 
   return (
     <Box>
-    <Stack spacing={2}>
-      <Item>
-    <div className="container">
-      <h2>Welcome, {user.username}!</h2>
-      <button    onClick={() => {
-            history.push('/past')}}>Past Reflections</button>
-      <br />
-      <GuyComponent/>
-      <br />
-      <button    onClick={() => {
-            history.push('/new')}}>New Reflection</button>
-      <p>Your ID is: {user.id}</p>
-    
-      </div>
-    </Item>
-        </Stack>
-      </Box>
+      <Stack spacing={2}>
+        <Item>
+          <div className="container">
+            <h2>Welcome, {user.username}!</h2>
+            <Button className= "buttons" variant="contained" color="success" onClick={() => {
+              history.push('/past')
+            }}>Past Reflections</Button>
+
+            <Button className= "buttons" variant="contained" color="success" onClick={() => {
+              history.push('/new')
+            }}>New Reflection</Button>
+            <br />
+            <GuyComponent />
+            <br />
+          </div>
+        </Item>
+      </Stack>
+    </Box>
   );
 }
 
