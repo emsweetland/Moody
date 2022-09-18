@@ -53,29 +53,27 @@ function EditComponent() {
 
     <div>
 
-      <h2>Past Reflections</h2>
+      <h2>Edit Reflection</h2>
       <p>{formatDate(thisReflection[0].when)}</p>
       {thisReflection[0] && (
         <ul>
           <li onClick={handleMood}>mood : {thisReflection[0].moodname}</li>
-          {thisReflection[0].response === null && <li>null</li>}
-          {thisReflection[0].response === true && <li>true</li>}
-          {thisReflection[0].response === false && <li>false</li>}
-          {thisReflection[1].response === null && <li>null</li>}
-          {thisReflection[1].response === true && <li>true</li>}
-          {thisReflection[1].response === false && <li>false</li>}
-          {thisReflection[2].response === null && <li>null</li>}
-          {thisReflection[2].response === true && <li>true</li>}
-          {thisReflection[2].response === false && <li>false</li>}
-          {thisReflection[3].response === null && <li>null</li>}
-          {thisReflection[3].response === true && <li>true</li>}
-          {thisReflection[3].response === false && <li>false</li>}
+          {thisReflection[0].response === null && <li>{thisReflection[0].text}: Tried my best!</li>}
+          {thisReflection[0].response === true && <li>{thisReflection[0].text}: Yep!</li>}
+          {thisReflection[0].response === false && <li>{thisReflection[0].text}: Nope.</li>}
+          {thisReflection[1].response === null && <li>{thisReflection[1].text}: Tried my best!</li>}
+          {thisReflection[1].response === true && <li>{thisReflection[1].text}: Yep</li>}
+          {thisReflection[1].response === false && <li>{thisReflection[1].text}: Nope</li>}
+          {thisReflection[2].response === null && <li>{thisReflection[2].text}: Tried my best!</li>}
+          {thisReflection[2].response === true && <li>{thisReflection[2].text}: Yep</li>}
+          {thisReflection[2].response === false && <li>{thisReflection[2].text}: Nope</li>}
+          {thisReflection[3].response === null && <li>{thisReflection[2].text}: Tried my best!</li>}
+          {thisReflection[3].response === true && <li>{thisReflection[2].text}: Yep</li>}
+          {thisReflection[3].response === false && <li>{thisReflection[2].text}: Nope</li>}
         </ul>
       )
       }
-      <IconButton aria-label="edit">
-        <SaveAltIcon onClick={handleSave} />
-      </IconButton>
+
     </div>
   );
 }

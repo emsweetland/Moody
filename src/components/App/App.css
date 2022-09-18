@@ -112,3 +112,7 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+.center{
+  text-align: center;
+}

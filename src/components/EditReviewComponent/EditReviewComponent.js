@@ -50,13 +50,12 @@ function EditReviewComponent() {
   return (
 
     <div >
-      <h2>a new reflection :)</h2>
-      <h3>review your answers:</h3>
-      <li>get enough sleep? </li>
-      <li>get enough to eat? </li>
-      <li>drink enough water?</li>
-      <li>did you talk to a friend? </li>
-      <li>what's your mood today? </li>
+      <h2>New Reflection</h2>
+      <h3>review your mood:</h3>
+      {responseToSend.mood === 1 && <li>tired</li>}
+      {responseToSend.mood === 2 && <li>epic</li>}
+      {responseToSend.mood === 3 && <li>grumpy</li>}
+      {responseToSend.mood === 4 && <li>devastated</li>}
       <IconButton aria-label="publish">
         <PublishIcon onClick={handleClick}/>
       </IconButton>

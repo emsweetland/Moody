@@ -49,7 +49,10 @@ function ReviewComponent(props) {
       <li>get enough to eat? {response.foodResponse}</li>
       <li>drink enough water? {response.waterResponse}</li>
       <li>did you talk to a friend? {response.friendResponse}</li>
-      <li>what's your mood today? {response.moodResponse}</li>
+      {response.moodResponse === 1 && <li>what's your mood today? tired</li>}
+      {response.moodResponse === 2 && <li>what's your mood today? epic</li>}
+      {response.moodResponse === 3 && <li>what's your mood today? grumpy</li>}
+      {response.moodResponse === 4 && <li>what's your mood today? devastated</li>}
       <IconButton aria-label="publish">
         <PublishIcon onClick={handleClick}/>
       </IconButton>
