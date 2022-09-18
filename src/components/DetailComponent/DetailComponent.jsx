@@ -47,17 +47,20 @@ function DetailComponent() {
 
 
   //dispatch when u click ok on the popup
-  const deleteDetail = (id) => {
-    console.log('delete_response', id)
-    dispatch({
-      type: 'DELETE_RESPONSE',
-      payload:
-        id
-    })
-    history.push('/past')
-  }
+  // const deleteDetail = (id) => {
+  //   console.log('delete_response', id)
+  //   dispatch({
+  //     type: 'DELETE_RESPONSE',
+  //     payload:
+  //       id
+  //   })
+  //   history.push('/past')
+  // }
 
-
+const deleteDetail = (id) => {
+  console.log(id);
+  history.push(`/confirmDelete/${id}`)
+}
 
 
 

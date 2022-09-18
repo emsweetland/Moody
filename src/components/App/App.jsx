@@ -31,11 +31,9 @@ import ReviewComponent from '../ReviewComponent/ReviewComponent';
 import SubmitComponent from '../SubmitComponent/SubmitComponent';
 import EditComponent from '../EditComponent/EditComponent';
 import EditMoodComponent from '../EditMoodComponent/EditMoodComponent';
-import EditWaterComponent from '../EditWaterComponent/EditFoodComponent/EditWaterComponent';
-
-
 import EditReviewComponent from '../EditReviewComponent/EditReviewComponent';
-
+import DeleteComponent from '../DeleteComponent/DeleteComponent';
+import ConfirmDeleteComponent from '../ConfirmDeleteComponent/ConfirmDeleteComponent';
 import GuyComponent from '../GuyComponent/GuyComponent';
 import './App.css';
 
@@ -149,13 +147,18 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            exact path ="/editWater/:id">
-            <EditWaterComponent />
+            exact path ="/editReview/:id">
+            <EditReviewComponent />
+          </ProtectedRoute>
+          
+          <ProtectedRoute
+            exact path ="/delete/">
+            <DeleteComponent />
           </ProtectedRoute>
 
           <ProtectedRoute
-            exact path ="/editReview/:id">
-            <EditReviewComponent />
+            exact path ="/confirmDelete/:id">
+            <ConfirmDeleteComponent />
           </ProtectedRoute>
 
 
