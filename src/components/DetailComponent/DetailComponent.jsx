@@ -13,6 +13,13 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#eef0ae',
+  ...theme.typography.h6,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
 
 
@@ -73,7 +80,10 @@ const deleteDetail = (id) => {
 
 
   return (
-
+    
+    <Box>
+    <Stack spacing={2}>
+      <Item>
     <div>
 
       <h2>Past Reflections</h2>
@@ -106,6 +116,10 @@ const deleteDetail = (id) => {
         <DeleteForeverIcon onClick={(() => deleteDetail(params.id))} />
       </IconButton>
     </div>
+    </Item>
+        </Stack>
+      </Box>
+    
   );
 }
 

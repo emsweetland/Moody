@@ -9,6 +9,19 @@ import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import SaveAltIcon from '@mui/icons-material/SaveAlt';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#eef0ae',
+  ...theme.typography.h6,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
+
 
 
 function EditComponent() {
@@ -51,6 +64,10 @@ function EditComponent() {
 
   return (
 
+    <Box>
+    <Stack spacing={2}>
+    <Item>
+
     <div>
 
       <h2>Edit Reflection</h2>
@@ -75,6 +92,10 @@ function EditComponent() {
       }
 
     </div>
+
+    </Item>
+        </Stack>
+      </Box>
   );
 }
 

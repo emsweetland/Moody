@@ -77,11 +77,12 @@ function PastComponent() {
 
 
   return (
+    
     <Box>
     <Stack spacing={2}>
       <Item>
     <div>
-      <h2>Past Reflections</h2>
+    <h2>Past Reflections</h2>
 
             <ul className="mojis">
 

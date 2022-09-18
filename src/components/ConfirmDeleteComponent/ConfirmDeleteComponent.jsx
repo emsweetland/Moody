@@ -6,6 +6,18 @@ import { useParams } from 'react-router-dom'
 //MUI stuff
 import { IconButton } from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#eef0ae',
+  ...theme.typography.h6,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
 // Basic functional component structure for React with default state
 // value setup. When making a new component be sure to replace the
@@ -29,6 +41,9 @@ function ConfirmDeleteComponent(props) {
   }
 
   return (
+    <Box>
+    <Stack spacing={2}>
+      <Item>
     <div>
       <h2>an old reflection :)</h2>
       <h3>are you sure you'd like to delete this reflection?</h3>
@@ -36,6 +51,9 @@ function ConfirmDeleteComponent(props) {
         <NavigateNextIcon  onClick={(() => deleteDetail(params.id))}/>
       </IconButton>
     </div>
+        </Item>
+        </Stack>
+      </Box>
   );
 }
 

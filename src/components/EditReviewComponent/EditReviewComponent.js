@@ -2,12 +2,25 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom'
-//MUI stuff
-import { IconButton } from '@mui/material';
-import PublishIcon from '@mui/icons-material/Publish';
 import axios from 'axios';
 import { useParams } from 'react-router-dom'
 
+
+//MUI stuff
+import { IconButton } from '@mui/material';
+import PublishIcon from '@mui/icons-material/Publish';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#eef0ae',
+  ...theme.typography.h6,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 // TODO sql query sending responses along with mood
 
 
@@ -48,8 +61,14 @@ function EditReviewComponent() {
   }
 
   return (
+    <Box>
+    <Stack spacing={2}>
+      <Item>
+    <div>
 
-    <div >
+
+
+      
       <h2>New Reflection</h2>
       <h3>review your mood:</h3>
       {responseToSend.mood === 1 && <li>tired</li>}
@@ -59,7 +78,15 @@ function EditReviewComponent() {
       <IconButton aria-label="publish">
         <PublishIcon onClick={handleClick}/>
       </IconButton>
-    </div>
+   
+   
+
+
+
+      </div>
+    </Item>
+        </Stack>
+      </Box>
   );
   
 }
