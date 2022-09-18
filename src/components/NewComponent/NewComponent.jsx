@@ -38,7 +38,7 @@ function NewComponent(props) {
     <div>
       <h2>a new reflection :)</h2>
       <p>You will be asked four questions that will each have a multiple choice response. Answer honestly, but don't overthink it! This is only meant to take a minute or two. :)</p>
-      <GuyComponent/>
+
       <IconButton aria-label="next">
         
         <NavigateNextIcon onClick={() => {

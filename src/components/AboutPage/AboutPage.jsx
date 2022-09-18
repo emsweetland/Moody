@@ -23,13 +23,13 @@ function AboutPage() {
        
         <p>Tech Used <br></br>HTML, CSS, Material UI, JavaScript, React, Redux, Sagas, Node, PostgresSQL, VS Code, Figma, DB Designer, Procreate</p>
 
-        <p>Next Steps<br></br>User Customization for Character, Prompts, Cheevos</p>
+        <p>Next Steps<br></br>User Customization for Character, Prompts, Cheevos, Illustrations</p>
 
         <p>Thank you,<br></br> My family, JFCS, PrimeAcademy <br></br> my cats, friends and fellow Mitches who helped to pick me up while I was down.</p>
         <p>Connect with me! <br></br>
         https://github.com/emsweetland
        https://www.linkedin.com/in/em-sweetland/</p>
-
+      https://twitter.com/impdrink/
       </div>
     </Item>
         </Stack>
