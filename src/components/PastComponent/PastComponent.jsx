@@ -47,28 +47,6 @@ function PastComponent() {
   }
 
 
-  // for (let time of reflection) {
-  // // LOOP THRU RESPONSES TO GET TIMESTAMPS
-  //    const dateString = time.when
-  //    console.log(dateString)
-
-  //    const formatDate = (dateString) => {
-  //      const options = {  month: "short", day: "numeric"}
-  //      return new Date(dateString).toLocaleDateString(undefined, options)
-  //    }
-
-  //    console.log(formatDate(dateString))
-  //    return show = formatDate(dateString)
-  // //LOOP THRU RESPONSES TO GET TIME STAMPS
-  // }
-
-
-
-
-
-
-
-
 
   const reflectionDetail = (id) => {
     console.log(id)
