@@ -1,3 +1,5 @@
+
+--database name: prime_app--
 --create tables--
 CREATE TABLE "user" (
 	"id" SERIAL PRIMARY KEY,
