@@ -34,7 +34,7 @@ Moody is meant to simplify the reflection process and take a look at how the cho
 
 HTML, CSS, Material UI, React, Redux-Sagas
 
-##Deployment
+## Deployment
 View the deployed version here: https://dry-bayou-45188.herokuapp.com/#/user
 
 ## Acknowledgement
