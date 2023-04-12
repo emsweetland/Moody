@@ -12,7 +12,7 @@ Moody is meant to simplify the reflection process and take a look at how the cho
 1. Create your database and tables using the provided data.sql file. Start the server.
 
 ### Install Dependencies 
-2. Open up your editor of choice and run the folloring:
+2. Open up your editor of choice and run the following:
 3. `npm install`
 6. Run `npm run server` in your terminal
 7. Run `npm run client` in your terminal, this will open up a new browser tab for you!
